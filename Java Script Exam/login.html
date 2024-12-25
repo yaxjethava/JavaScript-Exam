@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ExpenseHub</title>
+    <link rel="stylesheet" href="./Assets/Css/style.css">
+    <style>
+        body{
+            background-image: radial-gradient(circle, #004489, #1d3466, #1e2545, #181827, #080808);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+    <script src="./Assets/JS/script.js"></script>
+    <script>
+        // Redirect logic: Check if user is already logged in
+        document.addEventListener("DOMContentLoaded", () => {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (loggedInUser) {
+                // Redirect to tracker page if logged in
+                window.location.href = "tracker.html";
+            }
+        });
+    </script>
+</body>
+</html>
